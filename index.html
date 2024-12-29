@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   
+    <div id="auth">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <input id="registerUsername" placeholder="Username" required />
+            <input id="registerPassword" type="password" placeholder="Password" required />
+            <button type="submit">Register</button>
+        </form>
+
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input id="loginUsername" placeholder="Username" required />
+            <input id="loginPassword" type="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+ 
+    <div id="app" style="display: none;">
+      
+        <header>
+            <button id="logoutButton">Logout</button>
+        </header>
+
+        
+        <div id="mainContent">
+           
+            <div id="leftSection">
+                <h2>Welcome, <span id="username"></span>!</h2>
+
+                <h3>Your Expenses</h3>
+                <button id="viewAllExpensesButton">View All Expenses</button>
+                <ul id="expenseList"></ul>
+
+                <h2>Add Expense</h2>
+                <form id="expenseForm">
+                    <input id="description" placeholder="Description" required />
+                    <input id="amount" type="number" step="0.01" placeholder="Amount" required />
+                    <input id="date" type="date" required />
+                    <button type="submit">Add Expense</button>
+                </form>
+            </div>
+
+
+            <div id="rightSection">
+                <h2>Generate Expenses Chart</h2>
+                <form id="generateForm">
+                    <input id="startDate" type="date" placeholder="Start Date" required />
+                    <input id="endDate" type="date" placeholder="End Date" required />
+                    <button type="submit">Generate</button>
+                </form>
+                <canvas id="expenseChart" width="500" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
